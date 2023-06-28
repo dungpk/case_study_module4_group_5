@@ -29,8 +29,8 @@ public class PaymentHistoryService implements IPaymentHistoryService {
     }
 
     @Override
-    public void save(PaymentHistory paymentHistory) {
-        paymentHistoryRepository.save(paymentHistory);
+    public PaymentHistory save(PaymentHistory paymentHistory) {
+        return paymentHistoryRepository.save(paymentHistory);
     }
 
     @Override

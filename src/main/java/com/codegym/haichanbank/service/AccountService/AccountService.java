@@ -29,8 +29,9 @@ public class AccountService implements IAccountService{
     }
 
     @Override
-    public void save(Accounts accounts) {
-        accountsRepository.save(accounts);
+    public Accounts save(Accounts accounts) {
+
+        return accountsRepository.save(accounts);
     }
 
     @Override

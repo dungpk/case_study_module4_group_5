@@ -1,9 +1,13 @@
 package com.codegym.haichanbank.service.CardService;
 
 import com.codegym.haichanbank.model.Cards;
+<<<<<<< HEAD
 import com.codegym.haichanbank.model.Customer;
 import com.codegym.haichanbank.repository.CardsRepository;
 import com.codegym.haichanbank.repository.CustomerRepository;
+=======
+import com.codegym.haichanbank.repository.CardsRepository;
+>>>>>>> dung
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,23 +20,28 @@ public class CardService implements ICardService{
     private CardsRepository cardsRepository;
 
     @Autowired
+<<<<<<< HEAD
     private CustomerRepository customerRepository;
     private String email;
 
+=======
+    CardsRepository cardsRepository;
+>>>>>>> dung
     @Override
     public Iterable<Cards> findAll() {
-        return null;
+        return cardsRepository.findAll();
     }
 
     @Override
     public Optional<Cards> findById(Long id) {
-        return Optional.empty();
+        return cardsRepository.findById(id);
     }
 
     @Override
-    public void save(Cards cards) {
-
+    public Cards save(Cards cards) {
+        return cardsRepository.save(cards);
     }
+
 
     @Override
     public void remove(Long id) {
