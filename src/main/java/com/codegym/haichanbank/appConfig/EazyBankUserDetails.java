@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+package com.codegym.haichanbank.appConfig;
+
+import com.codegym.haichanbank.model.Customer;
+import com.codegym.haichanbank.repository.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+//@Service
+//public class EazyBankUserDetails implements UserDetailsService {
+=======
 //package com.codegym.haichanbank.appConfig;
 //
 //import com.codegym.haichanbank.model.Customer;
@@ -16,6 +30,7 @@
 //
 //@Service
 //public class EazyBankUserDetails  implements UserDetailsService {
+>>>>>>> f90c68b692e92908d8bda915510168a4ffb37964
 //
 //    @Autowired
 //    private CustomerRepository customerRepository;
@@ -35,4 +50,8 @@
 //        }
 //        return new User(username,password,authorities);
 //    }
+<<<<<<< HEAD
+//
+=======
+>>>>>>> f90c68b692e92908d8bda915510168a4ffb37964
 //}
