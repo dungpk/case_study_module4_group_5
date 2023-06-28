@@ -243,3 +243,11 @@ CREATE TABLE `transaction` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 INSERT INTO `haichanbank`.`transaction` (`transaction_id`, `send_transaction_id`, `receive_transaction_id`, `amount`, `date`, `transaction_is_active`) VALUES ('1', '1865764534', '1865764535', '100', '2023-06-26', '1');
+
+INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('7', '2', 'ROLE_USER');
+UPDATE `haichanbank`.`authorities` SET `name` = 'ROLE_ADMIN' WHERE (`id` = '6');
+INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('8', '2', 'ROLE_ADMIN');
+INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('9', '3', 'ROLE_ADMIN');
+INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('10', '3', 'ROLE_USER');
+INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('11', '4', 'ROLE_USER');
+INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('12', '4', 'ROLE_ADMIN');

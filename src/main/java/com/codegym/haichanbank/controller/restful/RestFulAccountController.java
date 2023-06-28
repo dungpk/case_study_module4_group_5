@@ -16,9 +16,16 @@ import java.util.List;
 @RestController
 public class RestFulAccountController {
     @Autowired
-    private AccountService accountsService;
+    private AccountService accountService;
 
-    @Autowired
-    private CustomerService customerService;
+    @GetMapping("/myAccount")
+    public Accounts getAccountDetails(@RequestParam int id) {
+        Accounts accounts = accountService.findByCustomerId(id);
+        if (accounts != null ) {
+            return accounts;
+        }else {
+            return null;
+        }
+    }
 
 }

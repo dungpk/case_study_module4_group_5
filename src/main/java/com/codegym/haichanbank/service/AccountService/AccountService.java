@@ -31,4 +31,9 @@ public class AccountService implements IAccountService{
     public void remove(Long id) {
         accountsRepository.deleteById(id);
     }
+
+    @Override
+    public Accounts findByCustomerId(int customerId) {
+        return accountsRepository.findByCustomerId(customerId);
+    }
 }
