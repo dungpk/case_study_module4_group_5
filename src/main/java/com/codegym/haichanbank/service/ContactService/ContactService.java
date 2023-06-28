@@ -24,8 +24,8 @@ public class ContactService implements IContactService{
     }
 
     @Override
-    public void save(Contact contact) {
-        contactRepository.save(contact);
+    public Contact save(Contact contact) {
+      return  contactRepository.save(contact);
     }
 
     @Override

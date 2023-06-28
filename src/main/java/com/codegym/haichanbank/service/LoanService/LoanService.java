@@ -23,8 +23,9 @@ public class LoanService implements ILoanService{
     }
 
     @Override
-    public void save(Loans loans) {
-        loanRepository.save(loans);
+    public Loans save(Loans loans) {
+
+        return loanRepository.save(loans);
     }
 
     @Override

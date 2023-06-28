@@ -24,8 +24,8 @@ public class SavingAccountService implements ISavingAccountService {
     }
 
     @Override
-    public void save(SavingAccount savingAccount) {
-        savingAccountRepository.save(savingAccount);
+    public SavingAccount save(SavingAccount savingAccount) {
+        return savingAccountRepository.save(savingAccount);
     }
 
     @Override

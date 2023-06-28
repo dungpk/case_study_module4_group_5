@@ -26,8 +26,9 @@ public class NoticeService implements INoticeService {
     }
 
     @Override
-    public void save(Notice notice) {
-        noticeRepository.save(notice)
+    public Notice save(Notice notice) {
+
+        return noticeRepository.save(notice);
     }
 
     @Override
