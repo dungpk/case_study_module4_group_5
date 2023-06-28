@@ -1,16 +1,19 @@
-package com.codegym.haichanbank.appConfig;
-
-import com.codegym.haichanbank.model.Customer;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
-
+//package com.codegym.haichanbank.appConfig;
+//
+//import com.codegym.haichanbank.model.Customer;
+//import com.codegym.haichanbank.repository.CustomerRepository;
+//import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.context.annotation.Bean;
+//import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.stereotype.Component;
+//
+//import java.util.ArrayList;
+//import java.util.List;
+//
 //@Component
 //public class EazyBankUsernamePwdAuthenticationProvider implements AuthenticationProvider {
-
+//
 //@Autowired
 //private CustomerRepository customerRepository;
 //
@@ -45,11 +48,11 @@ import java.util.List;
 //public boolean supports(Class<?> authentication) {
 //        return (UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication));
 //        }
-
-
-
-
-
+//
+//
+//
+//
+//
 //@Bean
 //    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
 //            CsrfTokenRequestAttributeHandler requestHandler = new CsrfTokenRequestAttributeHandler();
@@ -84,5 +87,5 @@ import java.util.List;
 //        oauth2ResourceServerCustomizer.jwt(jwtCustomizer -> jwtCustomizer.jwtAuthenticationConverter(jwtAuthenticationConverter)));
 //        return http.build();
 //        }
-
+//
 //}

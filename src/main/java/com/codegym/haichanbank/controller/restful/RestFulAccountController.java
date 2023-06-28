@@ -7,24 +7,37 @@ import com.codegym.haichanbank.repository.CustomerRepository;
 import com.codegym.haichanbank.service.AccountService.AccountService;
 import com.codegym.haichanbank.service.CustomerService.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class RestFulAccountController {
     @Autowired
     private AccountService accountService;
-
+    @Autowired
+    private CustomerService customerService;
     @GetMapping("/myAccount")
-    public Accounts getAccountDetails(@RequestParam int id) {
-        Accounts accounts = accountService.findByCustomerId(id);
+    public ResponseEntity<Accounts> getAccountDetails() {
+        Accounts accounts = accountService.findByCustomerId(1);
         if (accounts != null ) {
-            return accounts;
+            return new ResponseEntity<>(accounts, HttpStatus.OK);
         }else {
-            return null;
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+    }
+    @GetMapping("/userPortal")
+    public ResponseEntity<Customer> getCustomer(){
+        Optional<Customer> customer = customerService.findById(1L);
+        if(customer.isPresent()){
+            return new ResponseEntity<>(customer.get(), HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
