@@ -1,13 +1,10 @@
 package com.codegym.haichanbank.service.CardService;
 
 import com.codegym.haichanbank.model.Cards;
-<<<<<<< HEAD
 import com.codegym.haichanbank.model.Customer;
 import com.codegym.haichanbank.repository.CardsRepository;
 import com.codegym.haichanbank.repository.CustomerRepository;
-=======
-import com.codegym.haichanbank.repository.CardsRepository;
->>>>>>> dung
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
