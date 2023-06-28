@@ -1,11 +1,15 @@
 //package com.codegym.haichanbank.appConfig;
 //
+<<<<<<< HEAD
 //import com.codegym.haichanbank.filter.CsrfCookieFilter;
+=======
+>>>>>>> f90c68b692e92908d8bda915510168a4ffb37964
 //import jakarta.servlet.http.HttpServletRequest;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.security.config.Customizer;
 //import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+<<<<<<< HEAD
 //import org.springframework.security.config.http.SessionCreationPolicy;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 //import org.springframework.security.crypto.password.NoOpPasswordEncoder;
@@ -16,12 +20,19 @@
 //import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
 //import org.springframework.web.cors.CorsConfiguration;
 //import org.springframework.web.cors.CorsConfigurationSource;
+=======
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.web.SecurityFilterChain;
+//import org.springframework.web.cors.CorsConfiguration;
+>>>>>>> f90c68b692e92908d8bda915510168a4ffb37964
 //
 //import java.util.Arrays;
 //import java.util.Collections;
 //
 //@Configuration
 //public class ProjectSecurityConfig {
+<<<<<<< HEAD
 //
 //
 //    @Bean
@@ -55,6 +66,14 @@
 //                        .requestMatchers("/myCards").hasRole("USER")
 //                        .requestMatchers("/user").authenticated()
 //                        .requestMatchers("/notices","/contact","/register").permitAll())
+=======
+//    @Bean
+//    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+//        http.csrf((csrf) -> csrf.disable())
+//                .authorizeHttpRequests((requests) -> requests
+//                        .requestMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards").authenticated()
+//                        .requestMatchers("/notices", "/contact", "/register").permitAll())
+>>>>>>> f90c68b692e92908d8bda915510168a4ffb37964
 //                .formLogin(Customizer.withDefaults())
 //                .httpBasic(Customizer.withDefaults());
 //        return http.build();
@@ -65,4 +84,8 @@
 //        return new BCryptPasswordEncoder();
 //    }
 //
+<<<<<<< HEAD
 //}
+=======
+//}
+>>>>>>> f90c68b692e92908d8bda915510168a4ffb37964
