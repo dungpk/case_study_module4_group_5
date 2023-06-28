@@ -20,13 +20,6 @@ public class Contact {
 
 	@Column(name = "contact_email")
 	private String contactEmail;
-	
-	private String subject;
-
-	private String message;
-
-	@Column(name = "create_dt")
-	private Date createDt;
 
 	public String getContactId() {
 		return contactId;
@@ -75,5 +68,25 @@ public class Contact {
 	public void setCreateDt(Date createDt) {
 		this.createDt = createDt;
 	}
+
+	public Contact(String contactId, String contactName, String contactEmail, String subject, String message, Date createDt) {
+		this.contactId = contactId;
+		this.contactName = contactName;
+		this.contactEmail = contactEmail;
+		this.subject = subject;
+		this.message = message;
+		this.createDt = createDt;
+	}
+
+	public Contact() {
+	}
+
+	private String subject;
+
+	private String message;
+
+	@Column(name = "create_dt")
+	private Date createDt;
+
 	
 }

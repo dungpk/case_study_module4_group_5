@@ -36,6 +36,20 @@ public class Loans {
 	@Column(name = "create_dt")
 	private String createDt;
 
+	public Loans(int loanNumber, int customerId, Date startDt, String loanType, int totalLoan, int amountPaid, int outstandingAmount, String createDt) {
+		this.loanNumber = loanNumber;
+		this.customerId = customerId;
+		this.startDt = startDt;
+		this.loanType = loanType;
+		this.totalLoan = totalLoan;
+		this.amountPaid = amountPaid;
+		this.outstandingAmount = outstandingAmount;
+		this.createDt = createDt;
+	}
+
+	public Loans() {
+	}
+
 	public int getLoanNumber() {
 		return loanNumber;
 	}
@@ -99,5 +113,4 @@ public class Loans {
 	public void setCreateDt(String createDt) {
 		this.createDt = createDt;
 	}
-	
 }

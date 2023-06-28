@@ -18,6 +18,16 @@ CREATE TABLE `customer` (
 INSERT INTO `customer` (`name`,`email`,`mobile_number`, `pwd`, `role`,`create_dt`,`customer_is_active`)
 VALUES ('Happy','happy@example.com','9876548337', '$2y$12$oRRbkNfwuR8ug4MlzH5FOeui.//1mkd.RsOAJMbykTSupVy.x/vb2', 'admin',CURDATE(),1);
 
+INSERT INTO `customer` (`name`,`email`,`mobile_number`, `pwd`, `role`,`create_dt`,`customer_is_active`)
+VALUES ('dungphung','dungphung@gmail.com','0123456789', '$2y$12$oRRbkNfwuR8ug4MlzH5FOeui.//1mkd.RsOAJMbykTSupVy.x/vb2', 'admin',CURDATE(),1);
+
+INSERT INTO `customer` (`name`,`email`,`mobile_number`, `pwd`, `role`,`create_dt`,`customer_is_active`)
+VALUES ('hieutran','hieutran@gmail.com','0563546345', '$2y$12$oRRbkNfwuR8ug4MlzH5FOeui.//1mkd.RsOAJMbykTSupVy.x/vb2', 'admin',CURDATE(),1);
+
+INSERT INTO `customer` (`name`,`email`,`mobile_number`, `pwd`, `role`,`create_dt`,`customer_is_active`)
+VALUES ('haingo','haingo@gmail.com','046124646246', '$2y$12$oRRbkNfwuR8ug4MlzH5FOeui.//1mkd.RsOAJMbykTSupVy.x/vb2', 'admin',CURDATE(),1);
+
+
 CREATE TABLE `accounts` (
                             `customer_id` int NOT NULL,
                             `account_number` int NOT NULL,
@@ -32,6 +42,15 @@ CREATE TABLE `accounts` (
 
 INSERT INTO `accounts` (`customer_id`, `account_number`, `account_type`, `branch_address`, `create_dt`,`account_is_active`)
 VALUES (1, 1865764534, 'Savings', '123 Main Street, New York', CURDATE(),1);
+
+INSERT INTO `haichanbank`.`accounts` (`customer_id`, `account_number`, `account_type`, `branch_address`, `create_dt`, `account_is_active`)
+VALUES (2, '1865764535', 'Savings', 'Thai Binh', '2023-06-26', '1');
+
+INSERT INTO `haichanbank`.`accounts` (`customer_id`, `account_number`, `account_type`, `branch_address`, `create_dt`, `account_is_active`)
+VALUES (3, '1865764536', 'Savings', 'Ha Noi', '2023-06-26', '1');
+
+INSERT INTO `haichanbank`.`accounts` (`customer_id`, `account_number`, `account_type`, `branch_address`, `create_dt`, `account_is_active`)
+VALUES (4, '1865764537', 'Savings', 'Ha Noi', '2023-06-26', '1');
 
 CREATE TABLE `payment_history` (
                                    `payment_id` varchar(200) NOT NULL,
@@ -191,3 +210,36 @@ VALUES (1, 'ROLE_USER');
 
 INSERT INTO `authorities` (`customer_id`, `name`)
 VALUES (1, 'ROLE_ADMIN');
+
+CREATE TABLE `saving_account` (
+                                  `saving_account_id` int NOT NULL AUTO_INCREMENT,
+                                  `card_id` int NOT NULL,
+                                  `init_amount` int NOT NULL,
+                                  `duration` int NOT NULL,
+                                  `interest` float NOT NULL,
+                                  `create_dt` date DEFAULT NULL,
+                                  `expired_dt` date DEFAULT NULL,
+                                  `saving_account_is_active` boolean DEFAULT NULL,
+                                  PRIMARY KEY (`saving_account_id`),
+                                  KEY `card_id` (`card_id`),
+                                  CONSTRAINT `saving_account_card_ibfk_1` FOREIGN KEY (`card_id`) REFERENCES `cards` (`card_id`) ON DELETE CASCADE
+);
+
+INSERT INTO `haichanbank`.`saving_account` (`saving_account_id`, `card_id`, `init_amount`, `duration`, `interest`, `create_dt`, `expired_dt`, `saving_account_is_active`) VALUES ('1', '1', '100', '24', '0.1', '2020-10-13', '2022-10-13', '1');
+
+
+CREATE TABLE `transaction` (
+                               `transaction_id` int NOT NULL AUTO_INCREMENT,
+                               `send_transaction_id` int NOT NULL,
+                               `receive_transaction_id` int NOT NULL,
+                               `amount` int NOT NULL,
+                               `date` date DEFAULT NULL,
+                               `transaction_is_active` tinyint(1) DEFAULT NULL,
+                               PRIMARY KEY (`transaction_id`),
+                               KEY `send_transaction_id` (`send_transaction_id`),
+                               KEY `receive_transaction_id` (`receive_transaction_id`),
+                               CONSTRAINT `receive_transaction_id_card_ibfk_1` FOREIGN KEY (`receive_transaction_id`) REFERENCES `accounts` (`account_number`) ON DELETE CASCADE,
+                               CONSTRAINT `send_transaction_id_ibfk_1` FOREIGN KEY (`send_transaction_id`) REFERENCES `accounts` (`account_number`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+INSERT INTO `haichanbank`.`transaction` (`transaction_id`, `send_transaction_id`, `receive_transaction_id`, `amount`, `date`, `transaction_is_active`) VALUES ('1', '1865764534', '1865764535', '100', '2023-06-26', '1');

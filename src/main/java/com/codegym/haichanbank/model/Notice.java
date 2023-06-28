@@ -87,5 +87,18 @@ public class Notice {
 
 	public void setUpdateDt(Date updateDt) {
 		this.updateDt = updateDt;
-	}	
+	}
+
+	public Notice(int noticeId, String noticeSummary, String noticeDetails, Date noticBegDt, Date noticEndDt, Date createDt, Date updateDt) {
+		this.noticeId = noticeId;
+		this.noticeSummary = noticeSummary;
+		this.noticeDetails = noticeDetails;
+		this.noticBegDt = noticBegDt;
+		this.noticEndDt = noticEndDt;
+		this.createDt = createDt;
+		this.updateDt = updateDt;
+	}
+
+	public Notice() {
+	}
 }

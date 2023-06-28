@@ -99,5 +99,18 @@ public class Cards {
 	public void setCreateDt(Date createDt) {
 		this.createDt = createDt;
 	}
-	
+
+	public Cards(int cardId, int customerId, String cardNumber, String cardType, int totalLimit, int amountUsed, int availableAmount, Date createDt) {
+		this.cardId = cardId;
+		this.customerId = customerId;
+		this.cardNumber = cardNumber;
+		this.cardType = cardType;
+		this.totalLimit = totalLimit;
+		this.amountUsed = amountUsed;
+		this.availableAmount = availableAmount;
+		this.createDt = createDt;
+	}
+
+	public Cards() {
+	}
 }

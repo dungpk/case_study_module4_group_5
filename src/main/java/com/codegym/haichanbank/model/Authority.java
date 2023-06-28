@@ -42,4 +42,13 @@ public class Authority {
         this.customer = customer;
     }
 
+    public Authority(Long id, String name, Customer customer) {
+        this.id = id;
+        this.name = name;
+        this.customer = customer;
+    }
+
+    public Authority() {
+    }
+
 }
