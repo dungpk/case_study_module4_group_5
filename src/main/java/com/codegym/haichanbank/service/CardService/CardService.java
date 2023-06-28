@@ -20,13 +20,11 @@ public class CardService implements ICardService{
     private CardsRepository cardsRepository;
 
     @Autowired
-<<<<<<< HEAD
+
     private CustomerRepository customerRepository;
     private String email;
 
-=======
-    CardsRepository cardsRepository;
->>>>>>> dung
+
     @Override
     public Iterable<Cards> findAll() {
         return cardsRepository.findAll();
