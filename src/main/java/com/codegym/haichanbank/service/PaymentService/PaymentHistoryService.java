@@ -11,34 +11,37 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class PaymentHistoryService implements IPaymentHistoryService {
+public class PaymentHistoryService{
 
     @Autowired
     private CustomerRepository customerRepository;
 
     @Autowired
-    PaymentHistoryRepository paymentHistoryRepository;
-    @Override
+    private PaymentHistoryRepository paymentHistoryRepository;
+//    @Override
     public Iterable<PaymentHistory> findAll() {
         return paymentHistoryRepository.findAll();
     }
 
-    @Override
-    public Optional<PaymentHistory> findById(Long id) {
+//    @Override
+    public Optional<PaymentHistory> findById(String id) {
         return paymentHistoryRepository.findById(id);
     }
 
-    @Override
+//    @Override
     public PaymentHistory save(PaymentHistory paymentHistory) {
         return paymentHistoryRepository.save(paymentHistory);
     }
 
-    @Override
-    public void remove(Long id) {
+    public List<PaymentHistory> findAllByCustomerID(int customer_id){
+        return paymentHistoryRepository.findByCustomerIdOrderByTransactionDtDesc(customer_id);
+    }
+//    @Override
+    public void remove(String id) {
         paymentHistoryRepository.deleteById(id);
     }
 
-    @Override
+//    @Override
     public List<PaymentHistory> getBalanceDetails(String email) {
         List<Customer> customers = customerRepository.findByEmail(email);
         if (customers != null && !customers.isEmpty()) {

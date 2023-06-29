@@ -5,6 +5,7 @@ import com.codegym.haichanbank.repository.SavingAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -31,5 +32,10 @@ public class SavingAccountService implements ISavingAccountService {
     @Override
     public void remove(Long id) {
         savingAccountRepository.deleteById(id);
+    }
+
+
+    public List<SavingAccount> findAllByCardID(Long card_id){
+        return savingAccountRepository.findAllByCardId(card_id);
     }
 }

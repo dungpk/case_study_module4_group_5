@@ -5,9 +5,7 @@ import com.codegym.haichanbank.service.SavingAccountService.ISavingAccountServic
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -16,9 +14,9 @@ import java.util.Optional;
 public class RestFulSavingAccountController {
     @Autowired
     private ISavingAccountService savingAccountService;
-    @GetMapping("/savingAccount")
-    public ResponseEntity<SavingAccount> getSavingAccount(){
-        Optional<SavingAccount> optionalSavingAccount = savingAccountService.findById(1L);
+    @GetMapping("/savingAccount/{card_id}")
+    public ResponseEntity<SavingAccount> getSavingAccount(@PathVariable Long card_id){
+        Optional<SavingAccount> optionalSavingAccount = savingAccountService.findById(card_id);
         if (optionalSavingAccount.isPresent()){
             return new ResponseEntity<>(optionalSavingAccount.get(), HttpStatus.OK);
         }else{

@@ -1,11 +1,7 @@
 package com.codegym.haichanbank.model;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
 
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 import java.sql.Date;
 
@@ -114,6 +110,17 @@ public class PaymentHistory {
 
     public PaymentHistory(String paymentId, int accountNumber, int customerId, Date transactionDt, String transactionSummary, String transactionType, int transactionAmt, int closingBalance, String createDt) {
         this.paymentId = paymentId;
+        this.accountNumber = accountNumber;
+        this.customerId = customerId;
+        this.transactionDt = transactionDt;
+        this.transactionSummary = transactionSummary;
+        this.transactionType = transactionType;
+        this.transactionAmt = transactionAmt;
+        this.closingBalance = closingBalance;
+        this.createDt = createDt;
+    }
+
+    public PaymentHistory(int accountNumber, int customerId, Date transactionDt, String transactionSummary, String transactionType, int transactionAmt, int closingBalance, String createDt) {
         this.accountNumber = accountNumber;
         this.customerId = customerId;
         this.transactionDt = transactionDt;
