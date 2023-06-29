@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 public class RestFulAccountController {
     @Autowired
@@ -26,6 +26,7 @@ public class RestFulAccountController {
     @Autowired
     private CustomerService customerService;
 
+    @GetMapping("/myAccount")
     public ResponseEntity<Accounts> getAccountDetails() {
         Accounts accounts = accountService.findByCustomerId(1);
         if (accounts != null ) {

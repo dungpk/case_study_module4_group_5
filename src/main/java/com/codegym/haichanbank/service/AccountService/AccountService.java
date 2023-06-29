@@ -1,12 +1,11 @@
 package com.codegym.haichanbank.service.AccountService;
 
-import com.codegym.haichanbank.model.Accounts;
-import com.codegym.haichanbank.model.Customer;
-import com.codegym.haichanbank.repository.AccountsRepository;
-import com.codegym.haichanbank.repository.CustomerRepository;
+import com.codegym.haichanbank.model.*;
+import com.codegym.haichanbank.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,6 +17,16 @@ public class AccountService implements IAccountService{
 
     @Autowired
     private CustomerRepository customerRepository;
+
+    @Autowired
+    private SavingAccountRepository savingAccountRepository;
+
+    @Autowired
+    private CardsRepository cardsRepository;
+
+    @Autowired
+    private TransactionRepository transactionRepository;
+
     @Override
     public Iterable<Accounts> findAll() {
         return accountsRepository.findAll();
@@ -55,4 +64,5 @@ public class AccountService implements IAccountService{
         }
         return null;
     }
+
 }

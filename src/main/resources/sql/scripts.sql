@@ -228,6 +228,16 @@ CREATE TABLE `saving_account` (
 INSERT INTO `haichanbank`.`saving_account` (`saving_account_id`, `card_id`, `init_amount`, `duration`, `interest`, `create_dt`, `expired_dt`, `saving_account_is_active`) VALUES ('1', '1', '100', '24', '0.1', '2020-10-13', '2022-10-13', '1');
 
 
+INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('7', '2', 'ROLE_USER');
+UPDATE `haichanbank`.`authorities` SET `name` = 'ROLE_ADMIN' WHERE (`id` = '6');
+INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('8', '2', 'ROLE_ADMIN');
+INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('9', '3', 'ROLE_ADMIN');
+INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('10', '3', 'ROLE_USER');
+INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('11', '4', 'ROLE_USER');
+INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('12', '4', 'ROLE_ADMIN');
+
+
+
 CREATE TABLE `transaction` (
                                `transaction_id` int NOT NULL AUTO_INCREMENT,
                                `send_transaction_id` int NOT NULL,
@@ -244,10 +254,10 @@ CREATE TABLE `transaction` (
 
 INSERT INTO `haichanbank`.`transaction` (`transaction_id`, `send_transaction_id`, `receive_transaction_id`, `amount`, `date`, `transaction_is_active`) VALUES ('1', '1865764534', '1865764535', '100', '2023-06-26', '1');
 
-INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('7', '2', 'ROLE_USER');
-UPDATE `haichanbank`.`authorities` SET `name` = 'ROLE_ADMIN' WHERE (`id` = '6');
-INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('8', '2', 'ROLE_ADMIN');
-INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('9', '3', 'ROLE_ADMIN');
-INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('10', '3', 'ROLE_USER');
-INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('11', '4', 'ROLE_USER');
-INSERT INTO `haichanbank`.`authorities` (`id`, `customer_id`, `name`) VALUES ('12', '4', 'ROLE_ADMIN');
+
+INSERT INTO `haichanbank`.`cards` (`card_id`, `card_number`, `customer_id`, `card_type`, `total_limit`, `amount_used`, `available_amount`, `create_dt`) VALUES ('4', '111111111111', '2', 'Credit', '6000', '4000', '10000', '2023-06-26 00:00:00.000000');
+INSERT INTO `haichanbank`.`cards` (`card_id`, `card_number`, `customer_id`, `card_type`, `total_limit`, `amount_used`, `available_amount`, `create_dt`) VALUES ('5', '222222222222', '2', 'Credit', '6000', '4000', '10000', '2023-06-26 00:00:00.000000');
+INSERT INTO `haichanbank`.`cards` (`card_id`, `card_number`, `customer_id`, `card_type`, `total_limit`, `amount_used`, `available_amount`, `create_dt`) VALUES ('6', '333333333333', '3', 'Credit', '6000', '4000', '10000', '2023-06-26 00:00:00.000000');
+INSERT INTO `haichanbank`.`cards` (`card_id`, `card_number`, `customer_id`, `card_type`, `total_limit`, `amount_used`, `available_amount`, `create_dt`) VALUES ('7', '444444444444', '4', 'Credit', '6000', '4000', '10000', '2023-06-26 00:00:00.000000');
+INSERT INTO `haichanbank`.`cards` (`card_id`, `card_number`, `customer_id`, `card_type`, `total_limit`, `amount_used`, `available_amount`, `create_dt`) VALUES ('8', '555555555555', '4', 'Credit', '6000', '4000', '10000', '2023-06-26 00:00:00.000000');
+INSERT INTO `haichanbank`.`cards` (`card_id`, `card_number`, `customer_id`, `card_type`, `total_limit`, `amount_used`, `available_amount`, `create_dt`) VALUES ('9', '666666666666', '4', 'Credit', '6000', '4000', '10000', '2023-06-26 00:00:00.000000');

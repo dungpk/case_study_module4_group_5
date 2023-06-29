@@ -4,6 +4,7 @@ import com.codegym.haichanbank.model.Cards;
 import com.codegym.haichanbank.model.Customer;
 import com.codegym.haichanbank.repository.CardsRepository;
 import com.codegym.haichanbank.repository.CustomerRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +27,7 @@ public class CardService{
         return cardsRepository.findAll();
     }
 
-    public Optional<Cards> findById(int id) {
+    public Optional<Cards> findById(Long id) {
         return cardsRepository.findById(id);
     }
 

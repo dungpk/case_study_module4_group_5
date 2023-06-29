@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface SavingAccountRepository extends JpaRepository<SavingAccount,Long> {
-    public List<SavingAccount> findAllByCardId(Long id);
+    List<SavingAccount> findByCardId(int cardId);
 }
