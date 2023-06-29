@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 
-public interface CardsRepository extends JpaRepository<Cards, Long> {
+public interface CardsRepository extends JpaRepository<Cards, Integer> {
 	List<Cards> findByCustomerId(int customerNumber);
 	List<Cards>  findByCardNumber(String customerNumber);
 
